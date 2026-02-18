@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      width:1080px; height:1080px;
+      overflow:hidden;
+      background:#000;
+      font-family:Poppins, sans-serif;
+    }
+    .card{
+      position:relative;
+      width:1080px; height:1080px;
+      color:#fff;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(0,255,234,.16), transparent 45%),
+        linear-gradient(180deg, #0e1a22 0%, #000 75%);
+    }
+    .glow{
+      position:absolute; top:-220px; left:50%;
+      transform:translateX(-50%);
+      width:760px; height:760px;
+      background:rgba(0,140,255,.18);
+      filter:blur(140px);
+      z-index:1;
+    }
+    .badges{
+      position:absolute; top:40px; left:40px; right:40px;
+      display:flex; justify-content:space-between; gap:14px;
+      z-index:5;
+    }
+    .pill{
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.18);
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:22px;
+      font-weight:900;
+      white-space:nowrap;
+      backdrop-filter: blur(8px);
+    }
+    .pill.cyan{ border-color: rgba(0,255,234,.42); }
+
+    .top{
+      position:absolute; top:120px; left:0; right:0;
+      text-align:center; z-index:5;
+    }
+    .brand{
+      font-weight:900;
+      font-size:72px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      line-height:1;
+    }
+    .brand span{ color:#00ffea; }
+    .sub{
+      margin-top:14px;
+      font-size:18px;
+      letter-spacing:8px;
+      color:#7b7b7b;
+      text-transform:uppercase;
+    }
+
+    .imgBox{
+      position:absolute;
+      top:290px;
+      left:50%;
+      transform:translateX(-50%);
+      width:520px; height:520px;
+      border-radius:50px;
+      overflow:hidden;
+      border:2px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      box-shadow:0 40px 90px rgba(0,0,0,.65);
+      z-index:5;
+    }
+    .imgBox img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .text{
+      position:absolute; top:840px; left:70px; right:70px;
+      text-align:center; z-index:5;
+    }
+    .title{
+      font-size:58px;
+      font-weight:900;
+      line-height:1.05;
+      margin:0;
+    }
+    .desc{
+      margin:14px 0 0;
+      color:#a0a0a0;
+      font-size:24px;
+      font-weight:700;
+    }
+
+    .bottom{
+      position:absolute;
+      left:40px; right:40px; bottom:40px;
+      background:#141414;
+      border:2px solid #2a2a2a;
+      border-radius:42px;
+      padding:22px 26px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:5;
+      gap:16px;
+    }
+    .order{
+      background:#fff;
+      color:#000;
+      border-radius:30px;
+      padding:14px 20px;
+      font-weight:900;
+      font-size:22px;
+      display:flex; align-items:center; gap:10px;
+      flex-shrink:0;
+    }
+    .dot{ width:12px; height:12px; border-radius:50%; background:#00d26a; display:inline-block; }
+    .price{ text-align:right; line-height:1; }
+    .price small{
+      display:block;
+      color:#7a7a7a;
+      font-size:14px;
+      letter-spacing:6px;
+      font-weight:900;
+    }
+    .price b{
+      font-size:54px;
+      font-weight:900;
+    }
+
+    .footer{
+      position:absolute;
+      left:0; right:0;
+      bottom:120px;
+      text-align:center;
+      color:#6f6f6f;
+      font-weight:800;
+      letter-spacing:5px;
+      font-size:16px;
+      z-index:5;
+    }
+
+    .lantern{
+      position:absolute;
+      left:50px;
+      bottom:180px;
+      font-size:62px;
+      z-index:6;
+      display: {{RAMADAN_DISPLAY}};
+      filter: drop-shadow(0 20px 35px rgba(0,0,0,.75));
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow"></div>
+
+    <div class="badges">
+      <div class="pill">{{BADGE_LEFT}}</div>
+      <div class="pill cyan">{{BADGE_RIGHT}}</div>
+    </div>
+
+    <div class="top">
+      <div class="brand">BAROUD <span>APP</span></div>
+      <div class="sub">Digital Store Services</div>
+    </div>
+
+    <div class="imgBox">
+      <img src="{{IMAGE_URL}}" />
+    </div>
+
+    <div class="text">
+      <h1 class="title">{{TITLE}}</h1>
+      <p class="desc">{{DESC}}</p>
+    </div>
+
+    <div class="lantern">🏮</div>
+
+    <div class="footer">+961 70 385 398 • BAROUDAPP.COM</div>
+
+    <div class="bottom">
+      <div class="order"><span class="dot"></span> ORDER</div>
+      <div class="price">
+        <small>PRICE</small>
+        <b>{{PRICE}}</b>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
