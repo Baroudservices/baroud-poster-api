@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "netflix-1m",
+    "title": "Netflix 1 Month",
+    "desc": "4K UHD - Private",
+    "price": "5",
+    "badgeLeft": "RAMADAN 🌙",
+    "badgeRight": "RAMADAN OFFER 🌙",
+    "theme": "ramadan",
+    "imageUrl": "https://via.placeholder.com/1000x1000.png?text=NETFLIX"
+  },
+  {
+    "slug": "iptv",
+    "title": "Smart IPTV",
+    "desc": "Full Channels - Stable",
+    "price": "$9",
+    "badgeLeft": "AVAILABLE ✅",
+    "badgeRight": "SPECIAL OFFER ✨",
+    "theme": "normal",
+    "imageUrl": "https://via.placeholder.com/1000x1000.png?text=IPTV"
+  }
+]
