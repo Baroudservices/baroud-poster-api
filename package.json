@@ -1,13 +1,12 @@
 {
-  "name": "baroud-poster-api",
+  "name": "baroud-posters-generator",
   "version": "1.0.0",
-  "main": "server.js",
+  "private": true,
   "type": "commonjs",
   "scripts": {
-    "start": "node server.js"
+    "generate": "node generate.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
     "puppeteer": "^23.0.0"
   }
 }
