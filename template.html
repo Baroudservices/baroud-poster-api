@@ -18,8 +18,8 @@
       width:1080px;height:1920px;
       color:#fff;
       background:
-        radial-gradient(circle at 50% 10%, rgba(0,255,234,.18), transparent 44%),
-        radial-gradient(circle at 15% 28%, rgba(0,140,255,.13), transparent 40%),
+        radial-gradient(circle at 50% 10%, rgba(0,255,234,.16), transparent 44%),
+        radial-gradient(circle at 15% 28%, rgba(0,140,255,.12), transparent 40%),
         radial-gradient(circle at 85% 35%, rgba(0,140,255,.10), transparent 38%),
         linear-gradient(180deg, #0b1a22 0%, #000 70%);
     }
@@ -28,14 +28,15 @@
       position:absolute;top:-300px;left:50%;
       transform:translateX(-50%);
       width:980px;height:980px;
-      background:rgba(0,255,234,.12);
+      background:rgba(0,255,234,.11);
       filter:blur(190px);
       z-index:1;
     }
 
+    /* ✅ badges */
     .badges{
       position:absolute;top:60px;left:54px;right:54px;
-      display:flex;justify-content:space-between;gap:14px;
+      display:flex;justify-content:flex-end; /* ✅ واحد يمين */
       z-index:10;
     }
     .pill{
@@ -55,6 +56,7 @@
       box-shadow:0 0 0 1px rgba(0,255,234,.08), 0 18px 45px rgba(0,255,234,.08);
     }
 
+    /* ✅ header */
     .top{
       position:absolute;top:170px;left:0;right:0;
       text-align:center;z-index:10;
@@ -76,7 +78,7 @@
       font-weight:600;
     }
 
-    /* ✅ بوكس صورة قوي (مش زجاج فاضي) */
+    /* ✅ image */
     .imgBox{
       position:absolute;
       top:410px;
@@ -90,31 +92,27 @@
       border:1px solid rgba(255,255,255,0.10);
       box-shadow:0 60px 160px rgba(0,0,0,.72);
     }
-
-    /* ✅ خلي الصورة تعبي المكان (مش فاضي) */
     .imgBox img{
       width:100%;
       height:100%;
-      object-fit:cover; /* بدل contain */
+      object-fit:cover;
       display:block;
-      transform: scale(1.02);
-      filter: contrast(1.05) saturate(1.1);
+      transform:scale(1.02);
+      filter:contrast(1.05) saturate(1.1);
     }
-
-    /* تظليل خفيف فوق الصورة ليبين كل شي */
     .imgShade{
       position:absolute; inset:0;
       background:
         radial-gradient(circle at 50% 65%, rgba(0,0,0,.0), rgba(0,0,0,.55) 85%),
-        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.05));
+        linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.05));
       pointer-events:none;
     }
 
-    /* ✅ رمضان ديكور صغير */
+    /* ✅ lantern */
     .lantern{
       position:absolute;
       left:64px;
-      top:1225px;
+      top:1240px;
       font-size:74px;
       z-index:12;
       display: {{RAMADAN_DISPLAY}};
@@ -122,17 +120,16 @@
       opacity:.95;
     }
 
+    /* ✅ text */
     .text{
       position:absolute;
       top:1315px;left:90px;right:90px;
       text-align:center;
       z-index:12;
     }
-
-    /* ✅ خط أنعم وأحلى */
     .title{
-      font-size:90px;
-      font-weight:800;   /* أخف شوي من 900 */
+      font-size:88px;
+      font-weight:800;
       line-height:1.02;
       margin:0;
       text-shadow:0 18px 55px rgba(0,0,0,.55);
@@ -145,61 +142,70 @@
       font-weight:600;
     }
 
+    /* ✅ footer أكبر */
     .footer{
       position:absolute;
       left:0;right:0;
-      bottom:265px;
+      bottom:260px;
       text-align:center;
-      color:#6f6f6f;
-      font-weight:700;
-      letter-spacing:6px;
-      font-size:18px;
+      color:#9a9a9a;
+      font-weight:800;
+      letter-spacing:4px;
+      font-size:24px; /* ✅ أكبر */
       z-index:12;
+      text-transform:uppercase;
     }
 
-    /* ✅ شريط سفلي مرتب */
+    /* ✅ bottom: أصغر + أقرب */
     .bottom{
       position:absolute;
-      left:54px;right:54px;bottom:85px;
+      left:54px;right:54px;bottom:95px;
       background:rgba(18,18,18,.90);
       border:1px solid rgba(255,255,255,.10);
-      border-radius:70px;
-      padding:30px 34px;
+      border-radius:60px;
+      padding:22px 26px; /* ✅ أصغر */
       display:flex;
-      justify-content:space-between;
+      justify-content:flex-start; /* ✅ نخليهم جنب بعض */
       align-items:center;
+      gap:22px; /* ✅ قريبين */
       z-index:12;
-      gap:18px;
       box-shadow:0 35px 95px rgba(0,0,0,.55);
       backdrop-filter: blur(10px);
     }
+
     .order{
       background:#fff;
       color:#000;
-      border-radius:55px;
-      padding:18px 28px;
+      border-radius:48px;
+      padding:16px 24px;
       font-weight:900;
-      font-size:28px;
-      display:flex;align-items:center;gap:14px;
+      font-size:24px; /* ✅ أصغر */
+      display:flex;align-items:center;gap:12px;
       flex-shrink:0;
     }
     .dot{
-      width:14px;height:14px;border-radius:50%;
+      width:12px;height:12px;border-radius:50%;
       background:#00d26a;
       display:inline-block;
       box-shadow:0 0 0 6px rgba(0,210,106,.12);
     }
-    .price{text-align:right;line-height:1;}
+
+    /* ✅ السعر جنب الزر */
+    .price{
+      margin-left:auto;
+      display:flex;
+      align-items:baseline;
+      gap:14px;
+      padding-right:10px;
+    }
     .price small{
-      display:block;
       color:#8a8a8a;
       font-size:18px;
-      letter-spacing:8px;
+      letter-spacing:6px;
       font-weight:800;
-      margin-bottom:10px;
     }
     .price b{
-      font-size:92px;
+      font-size:78px;  /* ✅ أصغر */
       font-weight:900;
       letter-spacing:-1px;
     }
@@ -209,8 +215,8 @@
   <div class="card" id="card">
     <div class="glow"></div>
 
+    <!-- ✅ Badge واحد بس (يمين) -->
     <div class="badges">
-      <div class="pill">{{BADGE_LEFT}}</div>
       <div class="pill cyan">{{BADGE_RIGHT}}</div>
     </div>
 
