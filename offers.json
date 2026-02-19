@@ -28,5 +28,25 @@
     "badgeRight": "RAMADAN OFFER 🌙 ",
     "theme": "ramadan",
     "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/shahid.png"
+  },
+  {
+    "slug": "Prime",
+    "title": "Prime video ",
+    "desc": "Full account 1 Year ",
+    "price": "18",
+    "badgeLeft": "AVAILABLE ✅",
+    "badgeRight": "RAMADAN OFFER 🌙 ",
+    "theme": "ramadan",
+    "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/prime.png"
+  },
+  {
+    "slug": "Watchit",
+    "title": "Watch it ",
+    "desc": "Full account 1 Year ",
+    "price": "20",
+    "badgeLeft": "AVAILABLE ✅",
+    "badgeRight": "RAMADAN OFFER 🌙 ",
+    "theme": "ramadan",
+    "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/watch.png"
   }
 ]
