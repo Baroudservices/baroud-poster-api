@@ -19,4 +19,14 @@
     "theme": "ramadan",
     "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/iptv.png"
   }
+    {
+    "slug": "Shahid",
+    "title": "Shahid Vip",
+    "desc": "Full account 1 Year ",
+    "price": "34",
+    "badgeLeft": "AVAILABLE ✅",
+    "badgeRight": "RAMADAN OFFER 🌙 ",
+    "theme": "ramadan",
+    "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/shahid.png"
+  }
 ]
