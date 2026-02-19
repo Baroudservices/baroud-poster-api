@@ -22,15 +22,8 @@ async function main() {
   const offersPath = path.join(__dirname, "offers.json");
   const outDir = path.join(__dirname, "out");
 
-  if (!fs.existsSync(templatePath)) throw new Error("template.html not found");
-  if (!fs.existsSync(offersPath)) throw new Error("offers.json not found");
-
   const template = fs.readFileSync(templatePath, "utf8");
   const offers = JSON.parse(fs.readFileSync(offersPath, "utf8"));
-
-  if (!Array.isArray(offers) || offers.length === 0) {
-    throw new Error("offers.json is empty or not an array");
-  }
 
   fs.mkdirSync(outDir, { recursive: true });
 
@@ -40,7 +33,9 @@ async function main() {
 
   try {
     const page = await browser.newPage();
-    await page.setViewport({ width: 1080, height: 1080, deviceScaleFactor: 2 });
+
+    // ✅ ستوري حقيقي
+    await page.setViewport({ width: 1080, height: 1920, deviceScaleFactor: 2 });
 
     for (const o of offers) {
       const slug = (o.slug || o.title || "poster").toString()
@@ -60,7 +55,7 @@ async function main() {
 
       await page.setContent(html, { waitUntil: "networkidle0" });
 
-      // wait fonts + images
+      // انتظر الخطوط + الصور
       await page.evaluate(async () => {
         if (document.fonts && document.fonts.ready) await document.fonts.ready;
         const imgs = Array.from(document.images || []);
@@ -70,8 +65,12 @@ async function main() {
         })));
       });
 
+      // ✅ خد screenshot للـ card نفسه (مش viewport غلط)
+      const card = await page.$("#card");
+      if (!card) throw new Error("Card element not found (#card)");
+
       const outPath = path.join(outDir, `${slug}.png`);
-      await page.screenshot({ path: outPath, type: "png" });
+      await card.screenshot({ path: outPath, type: "png" });
 
       console.log("✅ Generated:", outPath);
     }
