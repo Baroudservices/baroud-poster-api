@@ -13,7 +13,6 @@
       font-family:Poppins, sans-serif;
     }
 
-    /* خلفية بسيطة */
     .card{
       position:relative;
       width:1080px;height:1920px;
@@ -21,7 +20,7 @@
       background: linear-gradient(180deg, #0e3a44 0%, #000 78%);
     }
 
-    /* badge واحد */
+    /* Badge واحد بالنص */
     .badge{
       position:absolute;
       top:64px; left:0; right:0;
@@ -39,10 +38,10 @@
       backdrop-filter: blur(8px);
     }
 
-    /* لوجو */
+    /* Header */
     .top{
       position:absolute;
-      top:170px; left:0; right:0;
+      top:165px; left:0; right:0;
       text-align:center;
       z-index:5;
     }
@@ -63,14 +62,14 @@
       font-weight:600;
     }
 
-    /* ✅ صورة المنتج: كبيرة + نظيفة */
+    /* ✅ صورة مربّع + كلشي مربّع */
     .imgBox{
       position:absolute;
-      top:410px;
+      top:380px;
       left:50%;
       transform:translateX(-50%);
-      width:900px;height:900px;
-      border-radius:86px;
+      width:860px;height:860px;          /* ✅ مربع */
+      border-radius:64px;               /* مربع ناعم */
       overflow:hidden;
       background:#050505;
       border:1px solid rgba(255,255,255,0.10);
@@ -79,30 +78,30 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:70px;
+      padding:80px;
     }
     .imgBox img{
       width:100%;
       height:100%;
-      object-fit:contain; /* ✅ ما في قص */
+      object-fit:contain;               /* ✅ ما في قص */
       display:block;
     }
 
-    /* رمضان (اختياري) */
+    /* رمضان صغير (اختياري) */
     .lantern{
       position:absolute;
-      left:70px;
-      top:1275px;
-      font-size:68px;
+      left:92px;
+      top:1205px;
+      font-size:62px;
       z-index:6;
       display: {{RAMADAN_DISPLAY}};
       opacity:.95;
     }
 
-    /* النص */
+    /* Text */
     .text{
       position:absolute;
-      top:1345px; left:90px; right:90px;
+      top:1250px; left:110px; right:110px;
       text-align:center;
       z-index:6;
     }
@@ -119,11 +118,11 @@
       font-weight:600;
     }
 
-    /* رقم + موقع أكبر */
+    /* Footer أكبر */
     .footer{
       position:absolute;
       left:0; right:0;
-      bottom:255px;
+      bottom:280px;
       text-align:center;
       color:#a9a9a9;
       font-weight:800;
@@ -132,19 +131,27 @@
       z-index:6;
     }
 
-    /* ✅ bottom bar: أصغر + السعر قريب */
-    .bottom{
+    /* ✅ Bottom Card (مش عريض) */
+    .bottomWrap{
       position:absolute;
-      left:60px; right:60px;
-      bottom:90px;
+      left:0; right:0;
+      bottom:105px;
+      display:flex;
+      justify-content:center;
+      z-index:6;
+    }
+
+    .bottom{
+      width:860px;                      /* ✅ نفس عرض الصورة تقريباً */
       background:rgba(20,20,20,.92);
       border:1px solid rgba(255,255,255,.10);
-      border-radius:58px;
-      padding:20px 24px;
+      border-radius:60px;
+      padding:18px 22px;
       display:flex;
       align-items:center;
       gap:16px;
-      z-index:6;
+      box-shadow:0 35px 95px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
     }
 
     .order{
@@ -164,11 +171,13 @@
       box-shadow:0 0 0 6px rgba(0,210,106,.12);
     }
 
+    /* ✅ Price Block مرتب (مش طالع لبرا) */
     .price{
       margin-left:auto;
       display:flex;
-      align-items:baseline;
-      gap:14px;
+      align-items:center;
+      gap:16px;
+      padding-right:6px;
     }
     .price small{
       color:#8a8a8a;
@@ -177,9 +186,10 @@
       font-weight:800;
     }
     .price b{
-      font-size:72px;
+      font-size:68px;                   /* ✅ أصغر شوي */
       font-weight:900;
       letter-spacing:-1px;
+      line-height:1;
     }
   </style>
 </head>
@@ -208,11 +218,13 @@
 
     <div class="footer">+961 70 385 398 • BAROUDAPP.COM</div>
 
-    <div class="bottom">
-      <div class="order"><span class="dot"></span> ORDER</div>
-      <div class="price">
-        <small>PRICE</small>
-        <b>{{PRICE}}</b>
+    <div class="bottomWrap">
+      <div class="bottom">
+        <div class="order"><span class="dot"></span> ORDER</div>
+        <div class="price">
+          <small>PRICE</small>
+          <b>{{PRICE}}</b>
+        </div>
       </div>
     </div>
 
