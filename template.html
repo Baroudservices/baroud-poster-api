@@ -62,14 +62,14 @@
       font-weight:600;
     }
 
-    /* ✅ صورة مربّع + كلشي مربّع */
+    /* ✅ صورة مربّع */
     .imgBox{
       position:absolute;
       top:380px;
       left:50%;
       transform:translateX(-50%);
-      width:860px;height:860px;          /* ✅ مربع */
-      border-radius:64px;               /* مربع ناعم */
+      width:860px;height:860px;
+      border-radius:64px;
       overflow:hidden;
       background:#050505;
       border:1px solid rgba(255,255,255,0.10);
@@ -78,13 +78,14 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:80px;
+      padding:0;                 /* ✅ كان 80px وعم يخرب */
     }
     .imgBox img{
       width:100%;
       height:100%;
-      object-fit:contain;               /* ✅ ما في قص */
+      object-fit:contain;        /* ما في قص */
       display:block;
+      padding:90px;              /* ✅ padding للصورة نفسها (ألطف) */
     }
 
     /* رمضان صغير (اختياري) */
@@ -96,12 +97,13 @@
       z-index:6;
       display: {{RAMADAN_DISPLAY}};
       opacity:.95;
+      filter: drop-shadow(0 18px 28px rgba(0,0,0,.6));
     }
 
     /* Text */
     .text{
       position:absolute;
-      top:1250px; left:110px; right:110px;
+      top:1240px; left:110px; right:110px;
       text-align:center;
       z-index:6;
     }
@@ -110,6 +112,7 @@
       font-weight:900;
       line-height:1.02;
       margin:0;
+      text-shadow: 0 18px 40px rgba(0,0,0,.35);
     }
     .desc{
       margin:18px 0 0;
@@ -131,7 +134,7 @@
       z-index:6;
     }
 
-    /* ✅ Bottom Card (مش عريض) */
+    /* Bottom Card */
     .bottomWrap{
       position:absolute;
       left:0; right:0;
@@ -142,26 +145,32 @@
     }
 
     .bottom{
-      width:860px;                      /* ✅ نفس عرض الصورة تقريباً */
+      width:860px;
       background:rgba(20,20,20,.92);
       border:1px solid rgba(255,255,255,.10);
       border-radius:60px;
       padding:18px 22px;
       display:flex;
       align-items:center;
+      justify-content:space-between;   /* ✅ ترتيب مظبوط */
       gap:16px;
       box-shadow:0 35px 95px rgba(0,0,0,.55);
       backdrop-filter: blur(10px);
     }
 
-    .price{
-      background:#fff;
-      color:#000;
+    /* ✅ زر PRICE (يسار) */
+    .order{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px 18px;
       border-radius:44px;
-      padding:14px 20px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
       font-weight:900;
       font-size:22px;
-      display:flex; align-items:center; gap:12px;
+      letter-spacing:.5px;
+      color:#fff;
       flex-shrink:0;
     }
     .dot{
@@ -171,16 +180,27 @@
       box-shadow:0 0 0 6px rgba(0,210,106,.12);
     }
 
-    /* ✅ Price Block مرتب (مش طالع لبرا) */
-    .price{
-      margin-left:auto;
+    /* ✅ كبسولة السعر (يمين) */
+    .pricePill{
+      background:#fff;
+      color:#000;
+      border-radius:44px;
+      padding:14px 22px;
+      font-weight:900;
       display:flex;
-      align-items:center;
-      gap:16px;
-      padding-right:6px;
+      align-items:baseline;
+      gap:10px;
+      box-shadow:0 18px 45px rgba(0,0,0,.35);
+      flex-shrink:0;
     }
-    .price b{
-      font-size:68px;                   /* ✅ أصغر شوي */
+    .pricePill small{
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:5px;
+      color:#444;
+    }
+    .pricePill b{
+      font-size:68px;
       font-weight:900;
       letter-spacing:-1px;
       line-height:1;
@@ -215,7 +235,9 @@
     <div class="bottomWrap">
       <div class="bottom">
         <div class="order"><span class="dot"></span> PRICE</div>
-        <div class="price">
+
+        <div class="pricePill">
+          <small>USD</small>
           <b>{{PRICE}}</b>
         </div>
       </div>
