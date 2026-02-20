@@ -40,13 +40,13 @@
     "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/prime.png"
   },
   {
-    "slug": "Watchit",
-    "title": "Watch it ",
-    "desc": "Full account 1 Year ",
-    "price": "20",
+    "slug": "Ramadan",
+    "title": "All you want ",
+    "desc": "All for 1 month ",
+    "price": "9.2",
     "badgeLeft": "AVAILABLE ✅",
     "badgeRight": "RAMADAN OFFER 🌙 ",
     "theme": "ramadan",
-    "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/watch.png"
+    "imageUrl": "https://raw.githubusercontent.com/Baroudservices/baroud-poster-api/main/imagee/klo.png"
   }
 ]
